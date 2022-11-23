@@ -7,11 +7,13 @@ import { AuthModule } from "./auth/auth.module";
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { EffectsModule } from '@ngrx/effects';
-import {TopBarModule} from "./shared/modules/top-bar/top-bar.module";
-import {PersistanceService} from "./shared/services/persistance.service";
-import {AuthInterceptor} from "./shared/services/authinterceptor.service";
+import { TopBarModule } from "./shared/modules/top-bar/top-bar.module";
+import { PersistanceService } from "./shared/services/persistance.service";
+import { AuthInterceptor } from "./shared/services/authinterceptor.service";
+import { GlobalFeedModule } from "./globalFeed/global-feed.module";
+import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import {AuthInterceptor} from "./shared/services/authinterceptor.service";
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({router: routerReducer}),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     HttpClientModule,
     EffectsModule.forRoot([]),
-    TopBarModule
+    TopBarModule,
+    GlobalFeedModule,
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [
     PersistanceService,
