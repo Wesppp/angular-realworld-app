@@ -13,7 +13,9 @@ import { TopBarModule } from "./shared/modules/top-bar/top-bar.module";
 import { PersistanceService } from "./shared/services/persistance.service";
 import { AuthInterceptor } from "./shared/services/authinterceptor.service";
 import { GlobalFeedModule } from "./globalFeed/global-feed.module";
+import { YourFeedModule } from "./yourFeed/your-feed.module";
 import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
+import { TagFeedModule } from "./tagFeed/tag-feed.module";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
     EffectsModule.forRoot([]),
     TopBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreRouterConnectingModule.forRoot()
   ],
   providers: [
