@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
-  selector: 'app-your-feed',
+  selector: 'app-your-article',
   templateUrl: './tag-feed.component.html',
   styleUrls: ['./tag-feed.component.scss']
 })

@@ -14,8 +14,11 @@ import { PersistanceService } from "./shared/services/persistance.service";
 import { AuthInterceptor } from "./shared/services/authinterceptor.service";
 import { GlobalFeedModule } from "./globalFeed/global-feed.module";
 import { YourFeedModule } from "./yourFeed/your-feed.module";
-import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
+import { routerReducer, StoreRouterConnectingModule } from "@ngrx/router-store";
 import { TagFeedModule } from "./tagFeed/tag-feed.module";
+import { ArticleModule } from "./article/article.module";
+import { CreateArticleModule } from "./create-article/create-article.module";
+import { EditArticleModule } from "./edit-article/edit-article.module";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { TagFeedModule } from "./tagFeed/tag-feed.module";
     GlobalFeedModule,
     YourFeedModule,
     TagFeedModule,
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    CreateArticleModule,
+    ArticleModule,
+    EditArticleModule
   ],
   providers: [
     PersistanceService,
